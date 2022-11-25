@@ -1,18 +1,12 @@
 #KEYWORD	KEYWORD_TOKENTYPE	REFERENCE_LINK	RSYNTAXTEXTAREA_TOKENTYPE
 
 # Datatypes (KEYWORD1)
-HashSerial	KEYWORD1
+GPSP	KEYWORD1
 
 # Methods and Functions (KEYWORD2)
-begin	KEYWORD2
-update	KEYWORD2
-end	KEYWORD2
-available	KEYWORD2
-availableForWrite	KEYWORD2
-send	KEYWORD2
-readMessage	KEYWORD2
-attachProcedure	KEYWORD2
-setAcknowledgedTimeout	KEYWORD2
+defineCommand KEYWORD2
+defineDescription KEYWORD2
+update KEYWORD2
 
 # Instances (KEYWORD2)
 
