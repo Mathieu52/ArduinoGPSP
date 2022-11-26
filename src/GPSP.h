@@ -17,14 +17,11 @@ class GPSP {
         String update();
 
     private:
-        //Command *command;
-        //String *description;
         char args_temp[10][50];
-        //arx::map<char*, Command> command_map {};
-        //arx::map<char*, char*> description_map {};
         
         int index = 0;
         char buffer[500];
+        char temp_buffer[500];
     
         void processBuffer();
         void helpCommand(const char args[][50], int size);

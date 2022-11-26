@@ -41,7 +41,7 @@ void GPSP::processBuffer() {
 String GPSP::update() {
     while(serial->available() > 0) {
         char c = serial->read();
-        if (c == '\n') {
+        if (c == '\n' || c == ';') {
             buffer[index] = '\0';
             processBuffer();
             index = 0;
