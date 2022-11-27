@@ -4,7 +4,7 @@
 GPSP protocol(Serial);
 
 void setup() {
-    serial.begin(9600);
+    Serial.begin(9600);
     protocol.defineCommand({ECHO, "ECHO", "Send back it's parameters"});
     protocol.defineCommand({FIBONACCI, "FIBONACCI", "Display Fibonacci Series up to first parameter value"});
     protocol.defineCommand({ANALOG, "ANALOG", "Control a pin"});
@@ -27,25 +27,25 @@ void ANALOG(const char args[][50], int size) {
 void ECHO(const char args[][50], int size) {
   for (int i = 0; i < size; i++) {
     if (i != 0)
-      serial.write(',');
-    serial.print(args[i]);
+      Serial.write(',');
+    Serial.print(args[i]);
   }
-  serial.println();
+  Serial.println();
 }
 
 void FIBONACCI(const char args[][50], int size) {
-  serial.println(size);
+  Serial.println(size);
   int n = size > 0 ? atoi(args[0]) : 50;
 
   int t1 = 0, t2 = 1, nextTerm = 0;
 
-  serial.println(t1);
-  serial.println(t2);
+  Serial.println(t1);
+  Serial.println(t2);
 
   nextTerm = t1 + t2;
 
   while(nextTerm <= n) {
-      serial.println(nextTerm);
+      Serial.println(nextTerm);
       t1 = t2;
       t2 = nextTerm;
       nextTerm = t1 + t2;
