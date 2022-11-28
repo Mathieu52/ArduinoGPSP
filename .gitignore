@@ -91,7 +91,7 @@ dkms.conf
 ### My own file ###
 **/html
 **/latex
-xml/**
+/xml
 /api.md
 /Doxyfile
 *.app
