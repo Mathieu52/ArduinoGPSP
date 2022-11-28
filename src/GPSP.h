@@ -5,6 +5,10 @@
 
 typedef void (*Pointer)(const char args[][50], int size);
 struct Command {
+    /**
+     * @brief 
+     * 
+     */
     Pointer pointer;
     char* name;
     char* description;

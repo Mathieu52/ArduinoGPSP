@@ -51,7 +51,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/GPSP.h" line="7" column="1" bodyfile="src/GPSP.h" bodystart="7" bodyend="11"/>
+    <location file="src/GPSP.h" line="7" column="8" bodyfile="src/GPSP.h" bodystart="7" bodyend="11"/>
     <listofallmembers>
       <member refid="struct_command_1a4c2ce6d4fa23b96f04bfc5421b338f10" prot="public" virt="non-virtual"><scope>Command</scope><name>description</name></member>
       <member refid="struct_command_1aac61810b8e87055d1648ec142086eb0e" prot="public" virt="non-virtual"><scope>Command</scope><name>name</name></member>
