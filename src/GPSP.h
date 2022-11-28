@@ -9,19 +9,15 @@ struct Command {
     char* name;
     char* description;
 };
-
 class GPSP {
     public:
         GPSP(Stream &serial);
         void defineCommand(Command command);
-        String update();
+        void update();
 
     private:
-        char args_temp[10][50];
-        
-        int index = 0;
+        char args_temp[10][50]; //  Used to temporarily store retrieved Arguments
         char buffer[500];
-        char temp_buffer[500];
     
         void processBuffer();
         void helpCommand(const char args[][50], int size);

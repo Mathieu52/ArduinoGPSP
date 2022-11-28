@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="_g_p_s_p_8h" kind="file" language="C++">
+    <compoundname>GPSP.h</compoundname>
+    <includes local="yes">Arduino.h</includes>
+    <includes local="no">QList.h</includes>
+    <includedby refid="_g_p_s_p_8cpp" local="yes">src/GPSP.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/GPSP.h</label>
+        <link refid="_g_p_s_p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="3">
+        <label>QList.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/GPSP.cpp</label>
+        <link refid="_g_p_s_p_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/GPSP.h</label>
+        <link refid="_g_p_s_p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_command" prot="public">Command</innerclass>
+    <innerclass refid="class_g_p_s_p" prot="public">GPSP</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_g_p_s_p_8h_1a608c663b9f5067bb56222a0ace10f7c3" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* Pointer) (const char args[][50], int size)</definition>
+        <argsstring>)(const char args[][50], int size)</argsstring>
+        <name>Pointer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/GPSP.h" line="6" column="9" bodyfile="src/GPSP.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GPSP_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPSP_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Arduino.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="_g_p_s_p_8h_1a608c663b9f5067bb56222a0ace10f7c3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="_g_p_s_p_8h_1a608c663b9f5067bb56222a0ace10f7c3" kindref="member">Pointer</ref>)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>args[][50],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="7" refid="struct_command" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_command" kindref="compound">Command</ref><sp/>{</highlight></codeline>
+<codeline lineno="8" refid="struct_command_1a52f87377703e996fc3157686e86d9302" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_g_p_s_p_8h_1a608c663b9f5067bb56222a0ace10f7c3" kindref="member">Pointer</ref><sp/><ref refid="struct_command_1a52f87377703e996fc3157686e86d9302" kindref="member">pointer</ref>;</highlight></codeline>
+<codeline lineno="9" refid="struct_command_1aac61810b8e87055d1648ec142086eb0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="struct_command_1aac61810b8e87055d1648ec142086eb0e" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="10" refid="struct_command_1a4c2ce6d4fa23b96f04bfc5421b338f10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="struct_command_1a4c2ce6d4fa23b96f04bfc5421b338f10" kindref="member">description</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="12" refid="class_g_p_s_p" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_g_p_s_p" kindref="compound">GPSP</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_g_p_s_p" kindref="compound">GPSP</ref>(Stream<sp/>&amp;serial);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_p_s_p_1a1fe8b357a3d72435a811092decba8a18" kindref="member">defineCommand</ref>(<ref refid="struct_command" kindref="compound">Command</ref><sp/>command);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_g_p_s_p_1a6a9d123d5d062302ad0dd476f893fdf2" kindref="member">update</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>args_temp[10][50];<sp/></highlight><highlight class="comment">//<sp/><sp/>Used<sp/>to<sp/>temporarily<sp/>store<sp/>retrieved<sp/>Arguments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[500];</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>processBuffer();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>helpCommand(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>args[][50],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printCommand(<ref refid="struct_command" kindref="compound">Command</ref><sp/>command);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Stream<sp/>*serial;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QList&lt;Command&gt;<sp/>commandList<sp/>=<sp/>QList&lt;Command&gt;();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/GPSP.h"/>
+  </compounddef>
+</doxygen>
