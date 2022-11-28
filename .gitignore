@@ -94,6 +94,7 @@ dkms.conf
 xml/
 /api.md
 /Doxyfile
+generateREADME.bash
 *.app
 
 ### Useless ###
