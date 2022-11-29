@@ -52,3 +52,17 @@ void loop() {
 }
 
 ```
+
+Exemple call :
+
+```
+
+ECHO;
+OR
+ECHO\n
+OR
+ECHO=Arg1,Arg2,...;
+OR
+ECHO=Arg1,Arg2,...\n
+
+```

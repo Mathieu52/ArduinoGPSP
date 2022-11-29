@@ -3,13 +3,13 @@
 #include "Arduino.h"
 #include <QList.h>
 
-typedef void (*Pointer)(const char args[][50], int size);
+typedef void (*GPSPCallBack)(const char args[][50], int size);
 struct Command {
     /**
      * @brief 
      * 
      */
-    Pointer pointer;
+    GPSPCallBack callback;
     char* name;
     char* description;
 };

@@ -1,5 +1,4 @@
 #include <GPSP.h>
-#include <SoftwareSerial.h>
 
 GPSP protocol(Serial);
 
@@ -8,13 +7,27 @@ void setup() {
     protocol.defineCommand({ECHO, "ECHO", "Send back it's parameters"});
     protocol.defineCommand({FIBONACCI, "FIBONACCI", "Display Fibonacci Series up to first parameter value"});
     protocol.defineCommand({ANALOG, "ANALOG", "Control a pin"});
-    pinMode(13, OUTPUT);
+    protocol.defineCommand({ANALOG, "PINMODE", "Sets the mode of a pin"});
 }
 
 void loop() {
   protocol.update();
 }
 
+// PINMODE={pin},{INPUT or OUTPUT}
+void PINMODE(const char args[][50], int size) {
+  if (size < 2)
+    return;
+
+  int pin = atoi(args[0]);
+  if (strcmp(args[1], "INPUT") == 0) {
+    PINMODE(pin, INPUT);
+  } else if (strcmp(args[1], "OUTPUT") == 0) {
+    PINMODE(pin, OUTPUT);
+  }
+}
+
+// ANALOG={pin},{[0-255]}
 void ANALOG(const char args[][50], int size) {
   if (size < 2)
     return;
@@ -24,6 +37,7 @@ void ANALOG(const char args[][50], int size) {
   analogWrite(pin, value);
 }
 
+// ECHO={message}
 void ECHO(const char args[][50], int size) {
   for (int i = 0; i < size; i++) {
     if (i != 0)
@@ -33,6 +47,8 @@ void ECHO(const char args[][50], int size) {
   Serial.println();
 }
 
+// FIBONACCI={Max value}
+// FIBONACCI
 void FIBONACCI(const char args[][50], int size) {
   Serial.println(size);
   int n = size > 0 ? atoi(args[0]) : 50;
