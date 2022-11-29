@@ -1,5 +1,4 @@
-# GPSP
-##### General Purpose Serial Protocol
+# General Purpose Serial Protocol (GPSP)
 
 Serial protocol library for Arduino
 
