@@ -1,4 +1,4 @@
-# Arduino GPSP
+# GPSP
 
 Serial protocol library for Arduino
 
