@@ -19,7 +19,7 @@ First, we create simple GPSP object and pass it the Stream we want to use.
 
 ``` C++
 
-GPSP protocol(Serial); // Or any other Serial, including SoftwareSerial
+GPSP protocol(Serial); // Or any other Serial, including a SoftwareSerial
 
 ```
 
