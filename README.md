@@ -1,4 +1,5 @@
 # GPSP
+##### General Purpose Serial Protocol
 
 Serial protocol library for Arduino
 
@@ -27,10 +28,17 @@ Then we can create some function to link to our protocol.
 
 ``` C++
 // Exemple:
+// The stream in which this function was called
 // Args : Array of c-string
 // Size : The number of arguments
-void ECHO(const char args[][50], int size) {
+void ECHO(Stream &stream, const char args[][50], int size) {
 }
+```
+
+If your function encounters an issue those methods are at your disposition.
+
+``` C++
+GPSP::printError(Stream &stream, const char *errorMessage);
 ```
 
 Then we can define and link our commands
