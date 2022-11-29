@@ -5,10 +5,10 @@
 /**
  * @brief Construct a new GPSP object, associating a Stream (Generally a Serial) to it.
  * 
- * @param serial
+ * @param stream
  */
-GPSP::GPSP(Stream &serial) {
-    this->serial = &serial;
+GPSP::GPSP(Stream &stream) {
+    this->stream = &stream;
 
 };
 
@@ -35,7 +35,7 @@ void GPSP::processBuffer() {
     
     for (int i = 0; i < commandList.size(); i++) {
         if (strcmp(buffer, commandList[i].name) == 0) {
-            commandList[i].callback(args_temp, index - 1);
+            commandList[i].callback(*stream, args_temp, index - 1);
             return;
         }
     }
@@ -45,9 +45,7 @@ void GPSP::processBuffer() {
         return;
     }
 
-    serial->print("Invalid syntax: ");
-    serial->println(buffer);
-    serial->println("use HELP for list of valid commands");
+    printError(*stream, "Invalid syntax\nuse HELP for list of valid commands");
 }
 
 /**
@@ -55,8 +53,8 @@ void GPSP::processBuffer() {
  * 
  */
 void GPSP::update() {
-    while(serial->available() > 0) {
-        char c = serial->read();
+    while(stream->available() > 0) {
+        char c = stream->read();
         if (c == '\n' || c == ';') {
             buffer[index] = '\0';
             processBuffer();
@@ -69,13 +67,43 @@ void GPSP::update() {
 }
 
 /**
+ * @brief Prints "Error:" followed by the message.
+ * 
+ * @param stream The Stream to print the error to.
+ * @param errorMessage The message to print to the stream as error.
+ */
+static void GPSP::printError(Stream &stream, const char *errorMessage) {
+    stream.write(0x15); // Negative Acknoledgment character (For computer to computer communication)
+    stream.println("Error:");
+
+    stream.print("\t- ");
+    for (int i = 0; errorMessage[i] != '\0'; i++) {
+        char c = errorMessage[i];
+        stream.write(c);
+        if (c == '\n')
+            stream.print("\t- ");
+    }
+    stream.write('\n');
+}
+
+/**
+ * @brief Return the stream used by this GPSP instance.
+ * 
+ * @return Stream& The stream used by this GPSP instance.
+ */
+Stream& GPSP::getStream() {
+    return *stream;
+}
+
+
+/**
  * @brief Prints to Stream commands specified by arguments. If none specified prints all available commands excluding itself.
  * 
  * @param args Arguments
  * @param size Number of retrieved arguments
  */
 void GPSP::helpCommand(const char args[][50], int size) {
-    serial->println("");
+    stream->println("");
     for (int i = 0; i < commandList.size(); i++) {
         if (size > 0) {
             for (int j = 0; j < size; j++) {
@@ -95,8 +123,16 @@ void GPSP::helpCommand(const char args[][50], int size) {
  * @param command The command to print
  */
 void GPSP::printCommand(Command command) {
-    serial->print(command.name);
-    serial->println(": ");
-    serial->print("\t- ");
-    serial->println(command.description);
+
+    stream->print(command.name);
+    stream->println(": ");
+
+    stream->print("\t- ");
+    for (int i = 0; command.description[i] != '\0'; i++) {
+        char c = command.description[i];
+        stream->write(c);
+        if (c == '\n')
+            stream->print("\t- ");
+    }
+    stream->write('\n');
 }
