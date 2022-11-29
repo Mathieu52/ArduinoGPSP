@@ -2,7 +2,7 @@
 
 Serial protocol library for Arduino
 
-Purpose of this library is to enable programmers to use a simple protocol to share accross all their Arduino based projects, allowing for simpler communication between their arduino and less confusion when trying to communicate with their project
+Purpose of this library is to enable programmers to use a simple protocol to share accross all their Arduino based projects, allowing for simpler communication between their arduino and less confusion when trying to communicate between or with projects
 
 This project was heavily inspired by AT command as this protocol syntax was inspired by it.
 
