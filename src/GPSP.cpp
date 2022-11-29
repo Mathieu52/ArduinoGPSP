@@ -35,7 +35,7 @@ void GPSP::processBuffer() {
     
     for (int i = 0; i < commandList.size(); i++) {
         if (strcmp(buffer, commandList[i].name) == 0) {
-            commandList[i].pointer(args_temp, index - 1);
+            commandList[i].callback(args_temp, index - 1);
             return;
         }
     }
