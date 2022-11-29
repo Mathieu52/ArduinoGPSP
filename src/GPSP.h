@@ -22,7 +22,8 @@ class GPSP {
     private:
         char args_temp[10][50]; //  Used to temporarily store retrieved Arguments
         char buffer[500];
-    
+        int index = 0;
+        
         void processBuffer();
         void helpCommand(const char args[][50], int size);
         void printCommand(Command command);
